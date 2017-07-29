@@ -11,10 +11,10 @@ $(document).ready(function () {
   var current_key_type = null;
 
   for(var i = 9;i < 9 + 88;i ++) {
-    var id = note(frequency_C0 * Math.pow(2, i / 12.0));
-    var key = $('<div>').prop('id', id.replace('#', 'sharp')).addClass('key');
+    var id = note_to_id(i);
+    var key = $('<div>').prop('id', id).addClass('key');
 
-    if(id.indexOf('#') !== -1) {
+    if(id.indexOf('sharp') !== -1) {
       key.addClass('black');
       key.css({ width: width_black + 'px' });
       current_key_type = 'black';
@@ -31,38 +31,21 @@ $(document).ready(function () {
       if(previous_key_type == 'black' && current_key_type == 'white') x += width_black / 2 + margin / 2;
     }
 
-    key.click(function (event) {
-      $(this).toggleClass('choosable');
-      if(event.metaKey) {
-        var choosable = $(this).hasClass('choosable');
-        var note = $(this).prop('id').replace(/\d+/, "");
-        for(var octave = 0;octave < 9;octave ++) {
-          if(choosable)
-            $('#' + note.replace('#', 'sharp') + octave).addClass('choosable');
-          else
-            $('#' + note.replace('#', 'sharp') + octave).removeClass('choosable');
-        }
-      }
-    });
-
     key.css({ left: x + 'px' });
     piano.append(key);
     previous_key_type = current_key_type;
   }
-  
+
 });
 
-function press(note, c) {
-  if(c == 'press') reset();
-  $('#' + note.replace('#', 'sharp')).addClass(c);
+function note_to_id(note) {
+  return note_to_name(note).replace('#', 'sharp');
 }
 
-function reset() {
-  $('.key').removeClass('press').removeClass('guess');
+function key_color(note, c) {
+  $('#' + note_to_id(note)).addClass(c);
 }
 
-function set_choosable(notes) {
-  $('.key').removeClass('choosable');
-  for(var i = 0;i < notes.length; i++)
-    $('#' + notes[i]).addClass('choosable');
+function key_color_reset() {
+  $('.key').removeClass('note-1').removeClass('note-2');
 }

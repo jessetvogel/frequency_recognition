@@ -17,9 +17,9 @@ function play(frequency, seconds) {
   var gain = context.createGain();
 
   // Set relevant values
-  oscillator.type = 'sine';
+  oscillator.type = 'triangle';
   oscillator.frequency.value = frequency;
-  gain.gain.value = 0.33;
+  gain.gain.value = 0.1;
 
   // Connect
   oscillator.connect(gain);

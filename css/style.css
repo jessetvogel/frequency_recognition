@@ -58,12 +58,13 @@ input:focus {
   text-align: center;
 }
 
-.real-frequency {
+.answer {
   color: #99cc99;
+  margin-right: 128px;
 }
 
-.guess-frequency {
-  color: #cc9999;
+.guess {
+  color: #cc99cc;
 }
 
 #play {
@@ -108,25 +109,24 @@ input:focus {
   height: 100%;
 }
 
-#piano .black.guess { background-color: #cc9999; }
-#piano .white.guess { background-color: #cc9999; }
-#piano .black.press { background-color: #99cc99; }
-#piano .white.press { background-color: #99cc99; }
+#piano .key.note-1 { background-color: #6699cc; }
+#piano .key.note-2 { background-color: #66cccc; }
 
-#piano .white:not(.choosable) { background-color: #d3d0c8; }
-#piano .black:not(.choosable) { background-color: #a09f93; }
-
-#presets {
-  position: absolute;
-  bottom: 32px;
-  width: 100%;
-  margin-top: 64px;
-  display: flex;
-  justify-content: center;
+#intervals {
+  margin-top: 32px;
 }
 
-#presets .button {
-  margin-left: 16px;
-  margin-right: 16px;
+#intervals > div {
+  line-height: 32px;
+  color: #515151;
+  text-align: center;
+  cursor: pointer;
+}
+
+#intervals > div:hover {
   background-color: #d3d0c8;
+}
+
+#intervals > div.disabled {
+  color: #a09f93;
 }
