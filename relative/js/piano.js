@@ -10,7 +10,7 @@ $(document).ready(function () {
   var previous_key_type = null;
   var current_key_type = null;
 
-  for(var i = 9;i <= 9 + 88;i ++) {
+  for(var i = 9;i < 9 + 88;i ++) {
     var id = note_to_id(i);
     var key = $('<div>').prop('id', id).addClass('key');
 
