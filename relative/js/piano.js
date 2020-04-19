@@ -10,7 +10,10 @@ $(document).ready(function () {
   var previous_key_type = null;
   var current_key_type = null;
 
-  for(var i = 9;i < 9 + 88;i ++) {
+  var min_key = 36;
+  var max_key = 59;
+
+  for(var i = min_key;i <= max_key;i ++) {
     var id = note_to_id(i);
     var key = $('<div>').prop('id', id).addClass('key');
 
@@ -22,6 +25,7 @@ $(document).ready(function () {
     else {
       key.addClass('white');
       key.css({ width: width_white + 'px' });
+      key.text(id);
       current_key_type = 'white';
     }
 

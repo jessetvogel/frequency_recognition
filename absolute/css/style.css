@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'museosans';
+	src: url('../fonts/museosans-300.ttf');
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #e8e6df;
+}
+
+* {
+	font-family: 'museosans';
+}
+
+
+#piano {
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 512px;
+	height: 96px;
+	display: flex;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+#piano .white {
+	flex-grow: 1;
+	padding-bottom: 4px;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	font-size: 12px;
+
+	background-color: rgba(255, 255, 255, 0.75);
+	margin-right: 1px;
+}
+
+#piano .white:last-child {
+	margin-right: 0px;
+}
+
+#piano .black {
+	position: relative;
+	width: 0px;
+}
+
+#piano .black div {
+	position: absolute;
+	left: -12px;
+	display: block;
+	width: 24px;
+	height: 60%;
+	background-color: #2d2d2d;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+#piano .white.correct { background-color: #59ce6b; }
+#piano .white.incorrect { background-color: #e16161; }
+#piano .black div.correct { background-color: #3f9d52; }
+#piano .black div.incorrect { background-color: #ae3f3f; }
+
+#button-hear-again {
+	margin-top: 32px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 128px;
+	height: 48px;
+	background-color: #2d2d2d;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
