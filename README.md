@@ -1,1 +1,1 @@
-Go either to https://jessetvogel.nl/pitchtest/relative or to https://jessetvogel.nl/pitchtest/absolute.
+Go either to https://jessetvogel.github.io/pitchtest/relative or to https://jessetvogel.github.io/pitchtest/absolute.
